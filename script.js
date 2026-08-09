@@ -773,8 +773,7 @@ skillProgressBars.forEach(bar => {
 
 const githubUsername = "VISWA-R-R";
 
-const githubAPI =
-    `https://api.github.com/users/${githubUsername}`;
+const githubAPI = "/api/github?type=profile";
 
 
 // =========================================
@@ -937,9 +936,7 @@ async function loadGitHubRepositories() {
     try {
 
         const response =
-            await fetch(
-                `https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=8`
-            );
+    await fetch("/api/github?type=repositories");
 
 
         if (!response.ok) {
