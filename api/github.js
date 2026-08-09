@@ -14,12 +14,11 @@ export default async function handler(req, res) {
         }
 
         const response = await fetch(githubURL, {
-            headers: {
-                "Accept": "application/vnd.github+json",
-                "Authorization": `Bearer ${process.env.PAT_1}`,
-                "X-GitHub-Api-Version": "2022-11-28"
-            }
-        });
+    headers: {
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28"
+    }
+});
 
         const data = await response.json();
 
